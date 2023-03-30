@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ServiceManagement
 
 struct ContentView: View {
     
@@ -44,6 +45,8 @@ struct ContentView: View {
             }.padding(.horizontal, 15)
             
             WebView(url: url)
+        }.onAppear {
+            print("ALE: ", SMLoginItemSetEnabled("AlessandroLoi.AutoLauncher" as CFString, true))
         }
     }
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98B675D729D6208500C321FF /* AutoLauncherAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B675D629D6208500C321FF /* AutoLauncherAppDelegate.swift */; };
+		98B675E429D622D200C321FF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B675E329D622D200C321FF /* main.swift */; };
+		98B675E629D6235000C321FF /* AutoLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 98B675D429D6208500C321FF /* AutoLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		98B675E929D6237800C321FF /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B675E829D6237800C321FF /* ServiceManagement.framework */; };
 		98EA206829D608E700A76F2A /* GPTPopoverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EA206729D608E700A76F2A /* GPTPopoverApp.swift */; };
 		98EA206A29D608E700A76F2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EA206929D608E700A76F2A /* ContentView.swift */; };
 		98EA206C29D608E900A76F2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98EA206B29D608E900A76F2A /* Assets.xcassets */; };
@@ -18,7 +22,25 @@
 		98EA207F29D6101E00A76F2A /* NSPopover+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EA207E29D6101E00A76F2A /* NSPopover+.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		98B675E529D6232D00C321FF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				98B675E629D6235000C321FF /* AutoLauncher.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		98B675D429D6208500C321FF /* AutoLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		98B675D629D6208500C321FF /* AutoLauncherAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLauncherAppDelegate.swift; sourceTree = "<group>"; };
+		98B675DF29D6208800C321FF /* AutoLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoLauncher.entitlements; sourceTree = "<group>"; };
+		98B675E329D622D200C321FF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		98B675E829D6237800C321FF /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		98EA206429D608E700A76F2A /* GPTPopover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPTPopover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98EA206729D608E700A76F2A /* GPTPopoverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTPopoverApp.swift; sourceTree = "<group>"; };
 		98EA206929D608E700A76F2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,21 +55,49 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		98EA206129D608E700A76F2A /* Frameworks */ = {
+		98B675D129D6208500C321FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		98EA206129D608E700A76F2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98B675E929D6237800C321FF /* ServiceManagement.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98B675D529D6208500C321FF /* AutoLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				98B675D629D6208500C321FF /* AutoLauncherAppDelegate.swift */,
+				98B675E329D622D200C321FF /* main.swift */,
+				98B675DF29D6208800C321FF /* AutoLauncher.entitlements */,
+			);
+			path = AutoLauncher;
+			sourceTree = "<group>";
+		};
+		98B675E729D6237700C321FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98B675E829D6237800C321FF /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		98EA205B29D608E700A76F2A = {
 			isa = PBXGroup;
 			children = (
 				98EA206629D608E700A76F2A /* GPTPopover */,
+				98B675D529D6208500C321FF /* AutoLauncher */,
 				98EA206529D608E700A76F2A /* Products */,
+				98B675E729D6237700C321FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				98EA206429D608E700A76F2A /* GPTPopover.app */,
+				98B675D429D6208500C321FF /* AutoLauncher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +138,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		98B675D329D6208500C321FF /* AutoLauncher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98B675E229D6208800C321FF /* Build configuration list for PBXNativeTarget "AutoLauncher" */;
+			buildPhases = (
+				98B675D029D6208500C321FF /* Sources */,
+				98B675D129D6208500C321FF /* Frameworks */,
+				98B675D229D6208500C321FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoLauncher;
+			productName = AutoLauncher;
+			productReference = 98B675D429D6208500C321FF /* AutoLauncher.app */;
+			productType = "com.apple.product-type.application";
+		};
 		98EA206329D608E700A76F2A /* GPTPopover */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 98EA207329D608EA00A76F2A /* Build configuration list for PBXNativeTarget "GPTPopover" */;
@@ -94,6 +162,7 @@
 				98EA206029D608E700A76F2A /* Sources */,
 				98EA206129D608E700A76F2A /* Frameworks */,
 				98EA206229D608E700A76F2A /* Resources */,
+				98B675E529D6232D00C321FF /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -114,6 +183,9 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					98B675D329D6208500C321FF = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					98EA206329D608E700A76F2A = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -133,11 +205,19 @@
 			projectRoot = "";
 			targets = (
 				98EA206329D608E700A76F2A /* GPTPopover */,
+				98B675D329D6208500C321FF /* AutoLauncher */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		98B675D229D6208500C321FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98EA206229D608E700A76F2A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -150,6 +230,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		98B675D029D6208500C321FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98B675E429D622D200C321FF /* main.swift in Sources */,
+				98B675D729D6208500C321FF /* AutoLauncherAppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98EA206029D608E700A76F2A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -167,6 +256,64 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		98B675E029D6208800C321FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AutoLauncher/AutoLauncher.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z8WP5WHYSB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSBackgroundOnly = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AlessandroLoi.AutoLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		98B675E129D6208800C321FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AutoLauncher/AutoLauncher.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z8WP5WHYSB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSBackgroundOnly = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AlessandroLoi.AutoLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		98EA207129D608EA00A76F2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -286,6 +433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GPTPopover/GPTPopover.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -300,9 +448,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AlessandroLoi.GPTPopover;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -314,6 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GPTPopover/GPTPopover.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -328,9 +479,11 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AlessandroLoi.GPTPopover;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -339,6 +492,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		98B675E229D6208800C321FF /* Build configuration list for PBXNativeTarget "AutoLauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98B675E029D6208800C321FF /* Debug */,
+				98B675E129D6208800C321FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		98EA205F29D608E700A76F2A /* Build configuration list for PBXProject "GPTPopover" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
