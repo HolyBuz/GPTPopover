@@ -12,24 +12,30 @@ struct ContentView: View {
     
     private let url = URL(string: "https://chat.openai.com/chat")!
     
-    @State private var isToggled = false
+    @State private var isFullscreen = false
+    @State private var willCloseAutomatically = true
     
-    var fullScreenHandler: () -> Void
+    let fullScreenHandler: () -> Void
+    let closeAutomaticallyHandler: (Bool) -> Void
     
     var body: some View {
         Spacer()
         
         VStack {
-            
+             
             HStack {
+                
+                Toggle(isOn: $willCloseAutomatically, label: {
+                    Text("Close Automatically")
+                })
                 
                 Spacer()
                 
                 Button(action: {
-                    isToggled.toggle()
+                    isFullscreen.toggle()
                     fullScreenHandler()
                 }) {
-                    Image(systemName: isToggled ? "arrowtriangle.right.and.line.vertical.and.arrowtriangle.left" : "arrowtriangle.left.and.line.vertical.and.arrowtriangle.right")
+                    Image(systemName: isFullscreen ? "arrowtriangle.right.and.line.vertical.and.arrowtriangle.left" : "arrowtriangle.left.and.line.vertical.and.arrowtriangle.right")
                         .imageScale(.large)
                 }
                 .buttonStyle(BorderlessButtonStyle())
@@ -45,8 +51,8 @@ struct ContentView: View {
             }.padding(.horizontal, 15)
             
             WebView(url: url)
-        }.onAppear {
-            print("ALE: ", SMLoginItemSetEnabled("AlessandroLoi.AutoLauncher" as CFString, true))
+        }.onChange(of: willCloseAutomatically) { toggleValue in
+            closeAutomaticallyHandler(toggleValue)
         }
     }
 }

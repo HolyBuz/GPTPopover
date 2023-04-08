@@ -9,17 +9,19 @@ import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    private var statusBar: StatusBarController?
+    private var statusBarController: StatusBarController?
     private var popover = NSPopover()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let contentView = ContentView(fullScreenHandler: { [weak self] in
             self?.popover.toggleSize()
+        }, closeAutomaticallyHandler: { [weak self] toggleValue in
+            self?.statusBarController?.changeEventMonitorActive(with: toggleValue)
         })
 
         popover.contentSize = NSPopover.defaultSize
         popover.contentViewController = NSHostingController(rootView: contentView)
 
-        statusBar = StatusBarController(popover)
+        statusBarController = StatusBarController(popover)
     }
 }

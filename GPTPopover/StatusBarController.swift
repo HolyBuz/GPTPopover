@@ -27,6 +27,8 @@ class StatusBarController {
             statusBarButton.action = #selector(togglePopover)
             statusBarButton.target = self
         }
+        
+        eventMonitor.start()
     }
     
     @objc private func togglePopover() {
@@ -40,7 +42,6 @@ class StatusBarController {
     private func showPopover() {
         guard let statusBarButton = statusItem.button else { return }
         
-        eventMonitor.start()
         popover.show(relativeTo: statusBarButton.bounds, of: statusBarButton, preferredEdge: .maxY)
     }
     
@@ -53,6 +54,14 @@ class StatusBarController {
         guard popover.isShown else { return }
         
         hidePopover()
+    }
+    
+    func changeEventMonitorActive(with value: Bool) {
+        if value {
+            eventMonitor.start()
+        } else {
+            eventMonitor.stop()
+        }
     }
 }
 
