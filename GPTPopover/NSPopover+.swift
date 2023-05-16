@@ -9,10 +9,12 @@ import AppKit
 
 extension NSPopover {
     
-    static let defaultSize = NSSize(width: 800, height: 500)
+    static var currentSize = NSPopover.defaultSize
+    static var defaultSize = NSSize(width: NSScreen.main!.frame.maxX/2,
+                                    height: NSScreen.main!.frame.maxY - 200)
     
     func toggleSize() {
-        if contentSize == NSPopover.defaultSize, let screen = NSScreen.main {
+        if contentSize <= NSPopover.defaultSize, let screen = NSScreen.main {
             let rect = screen.frame
             let height = rect.size.height
             let width = rect.size.width
@@ -20,5 +22,11 @@ extension NSPopover {
         } else {
             contentSize = NSPopover.defaultSize
         }
+    }
+}
+
+extension NSSize: Comparable {
+    public static func < (lhs: CGSize, rhs: CGSize) -> Bool {
+        lhs.width < rhs.width || lhs.height < rhs.height
     }
 }

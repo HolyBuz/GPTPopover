@@ -10,9 +10,10 @@ import WebKit
 
 struct WebView: NSViewRepresentable {
     let url: URL
+    let onDragHandler: () -> Void
     
     func makeNSView(context: Context) -> WKWebView {
-        let webView = WKWebView()
+        let webView = ResizableWKWebView(onDragHandler: onDragHandler)
         webView.load(URLRequest(url: url))
         webView.autoresizingMask = [.width, .height]
         webView.setContentHuggingPriority(.defaultLow, for: .horizontal)
@@ -23,4 +24,5 @@ struct WebView: NSViewRepresentable {
     func updateNSView(_ nsView: WKWebView, context: Context) {
         nsView.load(URLRequest(url: url))
     }
+    
 }

@@ -46,7 +46,6 @@ class StatusBarController {
     }
     
     private func hidePopover() {
-        eventMonitor.stop()
         popover.performClose(nil)
     }
     

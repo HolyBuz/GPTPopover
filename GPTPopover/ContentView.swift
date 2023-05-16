@@ -17,6 +17,7 @@ struct ContentView: View {
     
     let fullScreenHandler: () -> Void
     let closeAutomaticallyHandler: (Bool) -> Void
+    let onDragHandler: () -> Void
     
     var body: some View {
         Spacer()
@@ -50,7 +51,8 @@ struct ContentView: View {
 
             }.padding(.horizontal, 15)
             
-            WebView(url: url)
+            WebView(url: url, onDragHandler: onDragHandler)
+
         }.onChange(of: willCloseAutomatically) { toggleValue in
             closeAutomaticallyHandler(toggleValue)
         }

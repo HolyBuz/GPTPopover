@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		989B576729E0FB6200025D44 /* ResizableWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B576629E0FB6200025D44 /* ResizableWKWebView.swift */; };
 		98B675D729D6208500C321FF /* AutoLauncherAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B675D629D6208500C321FF /* AutoLauncherAppDelegate.swift */; };
 		98B675E429D622D200C321FF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B675E329D622D200C321FF /* main.swift */; };
 		98B675E629D6235000C321FF /* AutoLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 98B675D429D6208500C321FF /* AutoLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -36,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		989B576629E0FB6200025D44 /* ResizableWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableWKWebView.swift; sourceTree = "<group>"; };
 		98B675D429D6208500C321FF /* AutoLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B675D629D6208500C321FF /* AutoLauncherAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLauncherAppDelegate.swift; sourceTree = "<group>"; };
 		98B675DF29D6208800C321FF /* AutoLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoLauncher.entitlements; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				98EA207E29D6101E00A76F2A /* NSPopover+.swift */,
 				98EA207829D60FE100A76F2A /* StatusBarController.swift */,
 				98EA207629D60FCF00A76F2A /* WebView.swift */,
+				989B576629E0FB6200025D44 /* ResizableWKWebView.swift */,
 				98EA206929D608E700A76F2A /* ContentView.swift */,
 				98EA206729D608E700A76F2A /* GPTPopoverApp.swift */,
 				98EA206B29D608E900A76F2A /* Assets.xcassets */,
@@ -250,6 +253,7 @@
 				98EA207B29D60FFF00A76F2A /* AppDelegate.swift in Sources */,
 				98EA206829D608E700A76F2A /* GPTPopoverApp.swift in Sources */,
 				98EA207F29D6101E00A76F2A /* NSPopover+.swift in Sources */,
+				989B576729E0FB6200025D44 /* ResizableWKWebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
